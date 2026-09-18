@@ -557,14 +557,13 @@
     pollOptionsEl.appendChild(row);
   });
   resetCounts();
+  let chart = null;
   render();
 
   function resetCounts(){
     counts = {}; voters = {};
     optionIds.forEach(id => { counts[id] = 0; voters[id] = []; });
   }
-
-  let chart = null;
   function render(){
     const data = optionIds.map(id => counts[id] || 0);
     const total = data.reduce((a,b) => a+b, 0);
